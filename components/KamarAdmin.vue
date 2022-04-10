@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <h1>kamar saha</h1>
+  <div id="app" style="margin-top:2000px">
+    <h1 id="room">kamar saha</h1>
     <div v-for="(kamar,i) in info" :key="i" >
       {{ kamar.name }}
     </div>
@@ -11,7 +11,7 @@
 <script>
 import axios from 'axios'
 export default {
-  name: 'kamarPage',
+  name: 'KeteranganKamar',
   data() {
     return {
       info: null,

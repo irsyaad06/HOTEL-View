@@ -3,8 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - hotel-view',
-    title: 'hotel-view',
+    titleTemplate: '',
+    title: 'Kanzler Hotel',
     htmlAttrs: {
       lang: 'en',
     },
@@ -14,12 +14,13 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/TKanzler.png' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
-
+  css: [
+    '~assets/css/app.css'
+  ],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
@@ -50,7 +51,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,

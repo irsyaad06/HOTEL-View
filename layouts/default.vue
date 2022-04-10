@@ -1,8 +1,9 @@
 <template>
-
-      <v-container>
+<v-app id="app">
+      <v-container id="app" fluid  class="pa-0">
         <Nuxt />
       </v-container>
+</v-app>
     
 </template>
 
@@ -12,3 +13,8 @@ export default {
   
 }
 </script>
+<style scoped>
+ #app{
+    font-family: Poppins;
+ }
+</style>

@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <NavbarMain/>
-    <LandingPage/>
-    <AboutMain/>
-    <RoomMain/>
+    <Navbar/>  
+    <LandingPageAdmin/>
   </div>
 </template>
 
