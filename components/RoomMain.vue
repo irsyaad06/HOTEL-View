@@ -45,7 +45,7 @@
               <v-divider></v-divider>
 
               <v-card-text class="pb-0" v-for="(jeniss,i) in jenkam" :key="i">
-                {{ jeniss.jenis_kamar_id }
+                {{ jeniss.jenis_kamar_id }}
               </v-card-text>
             </div>
           </v-expand-transition>

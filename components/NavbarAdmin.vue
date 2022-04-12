@@ -14,15 +14,15 @@
 
         <v-spacer></v-spacer>
 
-        <v-toolbars>
+
           <v-toolbar-items
             class="text-decoration-none hidden-xs-only d-sm-flex"
           >
             <v-list-item class="pa-0 align-center">
               <nuxt-link class="d-flex justify-center" to="/">
-                <v-items class="d-flex justify-center" @click="scrollToHome()">
+                <h5 class="d-flex justify-center" @click="scrollToHome()">
                   Home
-                </v-items>
+                </h5>
               </nuxt-link>
 
               <a
@@ -30,12 +30,12 @@
                 :key="i"
                 class="d-flex justify-center align-center"
               >
-                <v-items
+                <h5
                   class="d-flex justify-center"
                   @click="scrollTo(items.link)"
                 >
                   {{ items.title }}
-                </v-items>
+                </h5>
               </a>
             </v-list-item>
           </v-toolbar-items>
@@ -47,18 +47,17 @@
           >
             <v-icon color="black"> mdi-menu</v-icon>
           </v-btn>
-        </v-toolbars>
 
         <v-spacer></v-spacer>
 
-        <v-toolbars class="mx-10 ml-13">
-          <nuxt-link to="/">
+     
+          <nuxt-link to="/" class="mr-11">
             <v-btn outlined small color="#342719" class="py-5 px-4">
               Customers
             </v-btn>
           </nuxt-link>
           <!-- <v-btn small outlined color="primary" class="py-5 px-4 ml-5"> Sign In </v-btn> -->
-        </v-toolbars>
+ 
       </v-app-bar>
     </v-container>
   </section>
@@ -102,30 +101,30 @@ export default {
 a {
   text-decoration: none;
 }
-v-items {
+h5 {
   font-family: PoppinsSemiBold;
 }
 .v-toolbar__content {
   padding: 4px 12px 4px 12px !important;
 }
-v-items {
+h5 {
   color: black;
   transition: 0.5s;
   width: 90px;
   font-size: 14px;
 }
-v-items:hover {
+h5:hover {
   font-size: 16px;
   transition: 0.5s;
 }
 @media (max-width: 600px) {
-  v-items p {
+  h5 {
     color: black;
     transition: 0.5s;
     width: 90px;
     font-size: 13px;
   }
-  v-items p:hover {
+h5 p:hover {
     font-size: 13px;
   }
 }
