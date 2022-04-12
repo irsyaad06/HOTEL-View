@@ -52,39 +52,15 @@
         <v-spacer></v-spacer>
 
         <v-toolbars class="mx-10 ml-13">
-          <nuxt-link to="AdminPage">
+          <nuxt-link to="/">
             <v-btn outlined small color="#342719" class="py-5 px-4">
-              Admin
+              Customers
             </v-btn>
           </nuxt-link>
           <!-- <v-btn small outlined color="primary" class="py-5 px-4 ml-5"> Sign In </v-btn> -->
         </v-toolbars>
       </v-app-bar>
     </v-container>
-    <!-- <v-navigation-drawer
-          v-model="Clicklist"
-          temporary
-          fixed    
-          width="185px"
-        >
-      
-
-          <v-list-item class="d-flex justify-center mt-5">
-         
-           <v-avatar size="70" tile><v-img max-width="120px" src="img/Asset/logo.png"></v-img></v-avatar>
-        
-          </v-list-item>
-           <v-list-item-title class="d-flex justify-center mt-1 mb-3 text-h6"><p class="mb-0 font-weight-bold"> Savikindo</p></v-list-item-title>
-
-   
-          <v-divider></v-divider>
-
-          <v-list dense class="mt-4">
-            <v-list-item v-for="(items,i) in linkbar" :key="i" >
-              {{ items.title }}
-            </v-list-item>
-          </v-list>
-        </v-navigation-drawer> -->
   </section>
 </template>
 
@@ -97,7 +73,6 @@ export default {
       Clicklist: false,
       linkbar: [
         // { title: "Home", icon: "" , link:"/AdminPage"},
-        { title: 'About', icon: '', link: 'about' },
         { title: 'Room', icon: '', link: 'room' },
         { title: 'Facilities', icon: '', link: 'facilities' },
       ],

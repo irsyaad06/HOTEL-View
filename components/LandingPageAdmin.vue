@@ -1,13 +1,9 @@
 <template>
-  <v-container style="margin-top: 150px">
+  <v-container class="justify-end" style="margin-top: 150px">
     <h1 class="d-flex justify-center">
       ROOM TYPE <font class="font-weight-thin ml-3"> TABLE </font>
     </h1>
-  <v-btn rounded class="pa-0">
-    <v-icon color="black">
-      mdi-plus
-    </v-icon>
-  </v-btn>
+
     <v-simple-table class="mt-16">
       <template v-slot:default>
         <thead>
@@ -41,6 +37,7 @@
                       <v-row>
                         <v-col sm="12" md="6">
                           <v-text-field
+                            v-model="editnama"
                             label="Type Room Name*"
                             required
                           ></v-text-field>
@@ -50,10 +47,20 @@
                   </v-card-text>
                   <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn color="blue darken-1" plain text @click="edites = false">
+                    <v-btn
+                      color="blue darken-1"
+                      plain
+                      text
+                      @click="edites = false"
+                    >
                       Close
                     </v-btn>
-                    <v-btn color="green darken-1" plain text @click="edites = false">
+                    <v-btn
+                      color="green darken-1"
+                      plain
+                      text
+                      @click="updates(jenis.id)"
+                    >
                       Save
                     </v-btn>
                   </v-card-actions>
@@ -97,6 +104,13 @@
         </tbody>
       </template>
     </v-simple-table>
+    <v-div class="d-flex justify-end">
+      <v-btn fab small @click="buat = true">
+        <v-icon color="black"> mdi-plus </v-icon>
+      </v-btn>
+
+      <v-dialog v-model="buat"> </v-dialog>
+    </v-div>
   </v-container>
 </template>
 
@@ -109,7 +123,11 @@ export default {
     return {
       id: '',
       search: '',
+      buat: false,
       edites: false,
+      editnama: '',
+      editharga: 69000,
+      editkapasitas: 69,
       deletess: false,
       jenkam: null,
       headers: [
@@ -127,6 +145,17 @@ export default {
       .catch(console.error)
   },
   methods: {
+    updates(id) {
+      this.edites = false
+      axios
+        .put('http://localhost:5000/services/jenis-kamar/' + id, {
+          name: this.editnama,
+          // harga_kamar: this.editharga,
+          // max_kapasitas: this.editkapasitas,
+        })
+        .then(console.log)
+        .catch(console.error)
+    },
     deletes(id) {
       axios
         .delete('http://localhost:5000/services/jenis-kamar?id=' + id)
@@ -134,15 +163,13 @@ export default {
         .catch(console.error)
     },
     created() {
-       axios
+      axios
         .post('http://localhost:5000/services/jenis-kamar')
         .then(console.log)
         .catch(console.error)
-
-    }
+    },
   },
 }
-
 </script>
  <style>
 </style>

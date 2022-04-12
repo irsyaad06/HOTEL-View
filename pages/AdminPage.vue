@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <Navbar/>  
+    <NavbarAdmin/>  
     <LandingPageAdmin/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AdminPage',
+  name: 'AdminPagess',
 
 }
 </script>
